@@ -6,7 +6,7 @@
 ################################ USER CONFIGURATION ################################
 
 # Names to use in FSRM
-$SkipListLoc = "C:\Backups\BloquearRamsom"
+$SkipListLoc = "C:\RamsomBlock\"
 $fileGroupName = "CryptoBlockerGroup"
 $fileTemplateName = "CryptoBlockerTemplate"
 # set screening type to

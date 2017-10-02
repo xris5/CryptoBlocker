@@ -1,13 +1,12 @@
 ﻿#####
 # DeployCryptoBlocker.ps1
-# Version: 1.2 
-# Editado por @xris5
+# Version: 1.1
 #####
 
 ################################ USER CONFIGURATION ################################
 
 # Names to use in FSRM
-$SkipListLoc = "C:\BloqRamsom"
+$SkipListLoc = "C:\RamsomBlock\"
 $fileGroupName = "CryptoBlockerGroup"
 $fileTemplateName = "CryptoBlockerTemplate"
 # set screening type to
