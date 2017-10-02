@@ -24,7 +24,15 @@ If the user attempts to write a malicious file (as described in the filescreen) 
 
 <b>Usage</b>
 
-Just run the script.  You can easily use this script to deploy the required FSRM install, configuration and needed blocking scripts across many file servers
+First, download the files DeployCryptoBlockerInstall.ps1 and DeployCryptoBlockerModify.ps1 into folder c:\C:\RamsomBlock\ (if you want change this folder, please review this files and change the path in the $SkipListLoc ).
+
+This script configure de FileGroups, FileScreen, and apply this filescreen for each drive network shares.
+Once this file are executed, you can add your own filters, and apply the CryptoBlocker template for source.
+
+At next you can schedule the execution of DeployCryptoBlockerModify.ps1 via task scheduler.
+This file is the same of DeployCryptoBlockerInstall.ps1 except for the part of installing the FSRM role (we assume it is already installed), and the part to recreate both the FileScreen and to apply the Filter to the network drives that we have configured.
+In this file the File Group are not deleted and recreated. Only modify with the new list of suspicious extensions.
+Therefore, since it is not necessary to create the FileScreen, it is not necessary to reapply the filters to the folders to be protected, and the protection of selected folders (not only network shares) always be active.
 
 An event will be logged by FSRM to the Event Viewer (Source = SRMSVC, Event ID = 8215), showing who tried to write a malicious file and where they tried to write it. Use your monitoring system of choice to raise alarms, tickets, etc for this event and respond accordingly.
 
